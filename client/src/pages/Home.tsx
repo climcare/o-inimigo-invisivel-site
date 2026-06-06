@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wind, Droplets, AlertCircle, CheckCircle2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 
 export default function Home() {
+  const [, setLocation] = useLocation();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -41,8 +43,8 @@ export default function Home() {
               Partículas invisíveis, germes, bactérias e poluentes circulam nos ambientes onde passamos 90% do nosso tempo. Descubra como a qualidade do ar interno afeta sua saúde.
             </p>
             <div className="flex gap-4 pt-4">
-              <Button size="lg" className="gap-2">
-                Saiba Mais <ArrowRight className="w-4 h-4" />
+              <Button size="lg" className="gap-2" onClick={() => setLocation('/quiz')}>
+                Fazer Quiz <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline">
                 Compartilhar
@@ -68,6 +70,14 @@ export default function Home() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Em hospitais e escritórios, ambientes aparentemente limpos podem estar repletos de ameaças microscópicas
             </p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setLocation('/quiz')}
+              className="mx-auto mt-4"
+            >
+              Fazer Quiz Agora
+            </Button>
           </div>
 
           {/* Hospital Card */}
@@ -329,11 +339,11 @@ export default function Home() {
             Seus efeitos, não. Cuidar da qualidade do ar interno é cuidar da saúde, da segurança e da vida que acontece dentro dos ambientes.
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" className="gap-2">
-              Comece Agora <ArrowRight className="w-4 h-4" />
+            <Button size="lg" className="gap-2" onClick={() => setLocation('/quiz')}>
+              Avaliar Seu Ambiente <ArrowRight className="w-4 h-4" />
             </Button>
             <Button size="lg" variant="outline">
-              Saiba Mais
+              Compartilhar
             </Button>
           </div>
         </div>
