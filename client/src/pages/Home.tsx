@@ -46,8 +46,8 @@ export default function Home() {
               <Button size="lg" className="gap-2" onClick={() => setLocation('/quiz')}>
                 Fazer Quiz <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
-                Compartilhar
+              <Button size="lg" variant="outline" onClick={() => setLocation('/quiz-card')}>
+                Quiz Card
               </Button>
             </div>
           </div>
